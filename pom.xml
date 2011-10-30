@@ -1,6 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 			     http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
@@ -13,62 +13,19 @@
   <name>odt2daisy</name>
   <description>odt2daisy - ODT to DAISY converter</description>
   <url>odt2daisy.sf.net</url>
-
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
   <inceptionYear>2008</inceptionYear>
-
+  
   <organization>
     <name>odt2daisy Project</name>
     <url>http://odt2daisy.sf.net</url>
   </organization>
 
-  <modules>
-   <module>odt2daisy-core</module>
-  </modules>
-
-  <issueManagement>
-        <system>sourceforge</system>
-        <url>http://sourceforge.net/tracker/?group_id=272398</url>
-  </issueManagement>
-
-  <!-- see:
-       http://docs.codehaus.org/display/MAVENUSER/MavenAndSourceforge
-       http://jwebunit.svn.sourceforge.net/viewvc/jwebunit/trunk/pom.xml
-  -->
-  <!--
-  <licenses>
-    <license>
-      <name>LGPL License</name>
-      <url>./LICENSE.txt</url>
-    </license>
-  </licenses>
-  -->
-
-  <scm>
-    <connection>scm:svn:https://odt2daisy.svn.sourceforge.net/svnroot/odt2daisy/odt2daisy3/trunk</connection>
-    <developerConnection>scm:svn:https://odt2daisy.svn.sourceforge.net/svnroot/odt2daisy/odt2daisy3/trunk</developerConnection>
-    <url>http://odt2daisy.svn.sourceforge.net/viewvc/odt2daisy/odt2daisy3/trunk</url>
-  </scm>
-
-  <distributionManagement>
-
-    <!--
-    <site>
-      <id>odt2daisy.sf.net</id>
-      <url>scp://shell.sourceforge.net/home/groups/o/od/odt2daisy/htdocs/maven</url>
-    </site>
-   
-   <repository>
-      <id>odt2daisy-repo</id>
-      <name>odt2daisy maven 2 repository</name>
-      <url>scp://shell.sourceforge.net/home/groups/o/od/odt2daisy/htdocs/maven/releases</url>
-   </repository>
-   -->
-
-  </distributionManagement>
-
   <developers>
-
-    <!-- VSPIEWAK -->
     <developer>
       <id>vspiewak</id>
       <name>Vincent SPIEWAK</name>
@@ -85,43 +42,96 @@
         <picUrl>http://tinyurl.com/prv4t</picUrl>
       </properties>
     </developer>
-
   </developers>
 
+  <licenses>
+    <license>
+      <name>GNU GENERAL PUBLIC LICENSE (Version 3)</name>
+      <url>http://www.gnu.org/licenses/gpl.txt</url>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>odt2daisy-core</module>
+  </modules>
+
+  <scm>
+    <connection>
+      scm:svn:https://odt2daisy.svn.sourceforge.net/svnroot/odt2daisy/odt2daisy3/trunk
+    </connection>
+    <developerConnection>
+      scm:svn:https://odt2daisy.svn.sourceforge.net/svnroot/odt2daisy/odt2daisy3/trunk
+    </developerConnection>
+    <url>
+      http://odt2daisy.svn.sourceforge.net/viewvc/odt2daisy/odt2daisy3/trunk
+    </url>
+  </scm>
+
+  <distributionManagement>
+    <!--
+    <site>
+      <id>odt2daisy-m2-site</id>
+      <url>
+      scp://shell.sourceforge.net/home/groups/o/od/odt2daisy/htdocs/maven/m2-site
+      </url>
+    </site>
+    -->
+
+    <repository>
+      <id>odt2daisy-m2-repo</id>
+      <name>odt2daisy maven 2 repository</name>
+      <url>
+	scp://shell.sourceforge.net/home/project-web/odt2daisy/htdocs/maven/m2-repo
+      </url>
+    </repository>
+    
+    <snapshotRepository>
+      <id>odt2daisy-m2-repo-snapshots</id>
+      <name>odt2daisy maven 2 snapshots repository</name>
+      <url>
+	scp://shell.sourceforge.net/home/project-web/odt2daisy/htdocs/maven/m2-repo-snapshots
+      </url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+    
+  </distributionManagement>
+  
+  <issueManagement>
+    <system>sourceforge</system>
+    <url>http://sourceforge.net/tracker/?group_id=272398</url>
+  </issueManagement>
+  
   <reporting>
     <plugins>
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-changes-plugin</artifactId>
-      <inherited>false</inherited>
-      <reportSets>
-	<reportSet>
-	  <reports>
-            <report>changes-report</report>
+	<version>2.2</version>
+	<inherited>false</inherited>
+	<reportSets>
+	  <reportSet>
+	    <reports>
+	      <report>changes-report</report>
 	  </reports>
-	</reportSet>
-      </reportSets>
-      <configuration>
-	<issueLinkTemplate>http://sourceforge.net/support/tracker.php?aid=%ISSUE%</issueLinkTemplate>
-      </configuration>
+	  </reportSet>
+	</reportSets>
+	<configuration>
+	  <issueLinkTemplate>
+	    http://sourceforge.net/support/tracker.php?aid=%ISSUE%
+	  </issueLinkTemplate>
+	</configuration>
       </plugin>
     </plugins>
   </reporting>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-	
-<!--
-<build>
-  <extensions>
-    <extension>
-      <groupId>org.apache.maven.wagon</groupId>
-       <artifactId>wagon-ssh-external</artifactId>
-       <version>1.0-alpha-5</version>
-    </extension>
-  </extensions>
-</build>
--->
-
+  
+  <build>
+    <extensions>
+      <extension>
+	<groupId>org.apache.maven.wagon</groupId>
+	<artifactId>wagon-ssh</artifactId>
+	<version>1.0</version>
+      </extension>
+    </extensions>
+  </build>
+  
 </project>
