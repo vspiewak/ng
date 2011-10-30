@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faqs title="Frequently Asked Questions">
+
+  <part id="odt2daisy-faq-part1">
+    <title>odt2daisy faq part 1</title>
+
+    <faq id="odt2daisy-faq-part1-faq1">
+      <question>
+        How can I ...
+      </question>
+      <answer>
+        <p>The answer: ...</p>
+	<source>
+	System.exit(0);
+        </source>
+      </answer>
+    </faq>
+
+  </part>
+
+  <part id="odt2daisy-faq-part2">
+    <title>odt2daisy faq part 2</title>
+
+    <faq id="odt2daisy-faq-part2-faq1">
+      <question>
+        How can I change ...
+      </question>
+      <answer>
+        <p>You have to ...</p>
+      </answer>
+    </faq>
+
+  </part>
+
+</faqs>

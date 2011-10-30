@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<document>
+    <properties>
+        <author email="vspiewak.at.users.sourceforge.net">Vincent Spiewak</author>
+        <title>odt2daisy</title>
+    </properties>
+    <meta name="keyword" content="odt2daisy, java, junit, daisy"/>
+    <head>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      </head>
+<body>
+<section name="Welcome">
+    <p>
+      Odt2daisy is a Java-based project...
+    </p>
+</section>
+
+<section name="What does odt2daisy provide?">
+    <p>
+        Odt2daisy provides ODT to DAISY solutions...
+    </p>
+</section>
+
+<section name="Using odt2daisy">
+  <p>
+    To use odt2daisy you only need to ...
+
+   <source>
+import net.sourceforge.odt2daisy;
+
+public class Example {
+
+    public static void main(String args[]) {
+       //...
+    }
+}
+</source>
+
+    For some more examples on how to use odt2daisy in your project, please look at the
+    <a href="quickstart.html">quick start guide</a>.
+    </p>
+
+</section>
+
+<section name="Contributing to Odt2daisy">
+    <p>
+    Contribution...
+    </p>
+</section>
+
+</body>
+</document>

@@ -13,13 +13,13 @@
   <name>odt2daisy</name>
   <description>odt2daisy - ODT to DAISY converter</description>
   <url>odt2daisy.sf.net</url>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
+
   <inceptionYear>2008</inceptionYear>
-  
+
   <organization>
     <name>odt2daisy Project</name>
     <url>http://odt2daisy.sf.net</url>
@@ -68,14 +68,13 @@
   </scm>
 
   <distributionManagement>
-    <!--
-    <site>
+
+   <site>
       <id>odt2daisy-m2-site</id>
       <url>
-      scp://shell.sourceforge.net/home/groups/o/od/odt2daisy/htdocs/maven/m2-site
+      scp://shell.sourceforge.net/home/project-web/odt2daisy/htdocs/maven/m2-site
       </url>
     </site>
-    -->
 
     <repository>
       <id>odt2daisy-m2-repo</id>
@@ -84,7 +83,7 @@
 	scp://shell.sourceforge.net/home/project-web/odt2daisy/htdocs/maven/m2-repo
       </url>
     </repository>
-    
+
     <snapshotRepository>
       <id>odt2daisy-m2-repo-snapshots</id>
       <name>odt2daisy maven 2 snapshots repository</name>
@@ -93,16 +92,37 @@
       </url>
       <uniqueVersion>false</uniqueVersion>
     </snapshotRepository>
-    
+
   </distributionManagement>
-  
+
   <issueManagement>
     <system>sourceforge</system>
     <url>http://sourceforge.net/tracker/?group_id=272398</url>
   </issueManagement>
-  
+
   <reporting>
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.4</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>index</report>
+              <report>dependencies</report>
+              <report>project-team</report>
+              <report>mailing-list</report>
+              <report>license</report>
+              <report>issue-tracking</report>
+              <report>scm</report>
+              <report>summary</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-changes-plugin</artifactId>
@@ -123,8 +143,19 @@
       </plugin>
     </plugins>
   </reporting>
-  
+
   <build>
+
+    <pluginManagement>
+      <plugins>
+	<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-site-plugin</artifactId>
+	  <version>3.0</version>
+	</plugin>
+      </plugins>
+    </pluginManagement>
+
     <extensions>
       <extension>
 	<groupId>org.apache.maven.wagon</groupId>
@@ -132,6 +163,7 @@
 	<version>1.0</version>
       </extension>
     </extensions>
+
   </build>
-  
+
 </project>

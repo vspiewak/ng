@@ -8,6 +8,11 @@
   <offline>false</offline>
   
   <servers>
+
+    <server>
+      <id>odt2daisy-m2-site</id>
+      <username>vspiewak,odt2daisy</username>
+    </server>
     
     <server>
       <id>odt2daisy-m2-repo</id>
