@@ -2,23 +2,79 @@
 
 <faqs title="Developers Frequently Asked Questions">
 
-  <part id="odt2daisy-dev-faq-part1">
-    <title>odt2daisy developers faq part 1</title>
-
-    <faq id="odt2daisy-dev-faq-part1-faq1">
+  <part id="dev-faq-maven-usage">
+    <title>odt2daisy developers faq (Maven Usage)</title>
+    <faq id="dev-faq-maven-sourcecode">
       <question>
-        How can I ...
+        How can I checkout odt2daisy sources ?
       </question>
       <answer>
-        <p>The answer: ...</p>
-	<source>
-	System.exit(0);
-        </source>
+        <p>You should visit this page: <a href="source-repository.html">Source repository</a>.</p>
       </answer>
     </faq>
-
+    <faq id="dev-faq-maven-sf-settings">
+      <question>
+        How can I configure SF.net maven settings ?
+      </question>
+      <answer>
+        <p>You have to copy/edit m2-settings.xml and merge it with your settings.xml</p>
+      </answer>
+    </faq>
+    <faq id="dev-faq-maven-website-local">
+      <question>
+        How can I deploy the odt2daisy Maven Website locally ?
+      </question>
+      <answer>
+        <p>You can type in your terminal:</p>
+	<source>mvn clean site:site site:run</source>
+        <p>The open with your favorite Web Browser this url: <a href="http://localhost:8080/">http://localhost:8080/</a>.</p>
+      </answer>
+    </faq>
+    <faq id="dev-faq-maven-website-sf">
+      <question>
+        How can I deploy the odt2daisy Maven Website on SF.net ?
+      </question>
+      <answer>
+        <p>First, create an ssh tunnel by typing in your terminal:</p>
+	<source>ssh -t &lt;username&gt;,odt2daisy@shell.sourceforge.net create</source>
+        <p>Then, deploy it by typing in your terminal:</p>
+	<source>mvn clean site:site site:deploy</source>
+      </answer>
+    </faq>
+    <faq id="dev-faq-maven-release-sf">
+      <question>
+        How can I release odt2daisy on SF.net ?
+      </question>
+      <answer>
+        <p>First, create an ssh tunnel by typing in your terminal:</p>
+	<source>ssh -t &lt;username&gt;,odt2daisy@shell.sourceforge.net create</source>
+        <p>Then, release it by typing in your terminal the following commands:</p>
+	<source>
+	 mvn clean release:prepare
+	 mvn release:perform</source>
+	<p>
+	  This will perform the following tasks:
+	  <ul>
+	    <li>Check that there are no uncommitted changes in the sources</li>
+	    <li>Check that there are no SNAPSHOT dependencies</li>
+	    <li>Change the version in the POMs from x-SNAPSHOT to a new version 
+	      (you will be prompted for)</li>
+	    <li>Transform the SCM information in the POM to include the final destination of the tag</li>
+	    <li>Run the project tests against the modified POMs to confirm everything is in working order</li>
+	    <li>Commit the modified POMs</li>
+	    <li>Tag the code in the SCM with a version name (this will be prompted for)</li>
+	    <li>Bump the version in the POMs to a new value y-SNAPSHOT (these values will also be prompted for)</li>
+	    <li>Commit the modified POMs</li>
+          </ul>
+	  <ul>
+	    <li>Checkout from an SCM URL with optional tag</li>
+	    <li>Run the predefined Maven goals to release the project (deploy site-deploy)</li>
+	  </ul>
+	</p>
+      </answer>
+    </faq>
   </part>
-
+  <!--
   <part id="odt2daisy-dev-faq-part2">
     <title>odt2daisy developers faq part 2</title>
 
@@ -32,5 +88,5 @@
     </faq>
 
   </part>
-
+  -->
 </faqs>

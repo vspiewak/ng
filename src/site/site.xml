@@ -20,7 +20,7 @@
         <href>http://odt2daisy.sf.net</href>
     </bannerLeft>
 
- <!--
+   <!--
    <bannerRight>
      <name>odt2daisy</name>
      <src/>
@@ -44,16 +44,23 @@
        <item name="Developers FAQ" href="faq-dev.html" />
      </menu>
 
-     <menu name="Sourceforge" inherit="top">
-       <item name="Project page"
-             href="http://sourceforge.net/projects/odt2daisy" />
-       <item name="Download"
-             href="http://sourceforge.net/projects/odt2daisy/files" />
+     <menu name="Maven" inherit="top">
+       <item name="Repository"
+             href="http://odt2daisy.sf.net/maven/m2-repo" />
+       <item name="Snapshots Repository"
+             href="http://odt2daisy.sf.net/maven/m2-repo-snapshots" />
      </menu>
 
      <menu ref="modules"  inherit="top"/>
 
      <menu ref="reports" />
+
+     <menu name="SourceForge.net" inherit="top">
+       <item name="Project page"
+             href="http://sourceforge.net/projects/odt2daisy" />
+       <item name="Download"
+             href="http://sourceforge.net/projects/odt2daisy/files" />
+     </menu>
 
    </body>
 
