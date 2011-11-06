@@ -47,6 +47,7 @@ public class CoreTest extends TestCase {
     System.out.println("process");
 
     File in = new File("src/test/resources/odt/simple.odt");
+    //File in = new File("src/test/resources/odt/thomas_medical_conflicts.odt");
     File out = new File("target/simple.xml");
 
     Core convert = new Core(
@@ -54,6 +55,7 @@ public class CoreTest extends TestCase {
             out);
     convert.process();
 
+    //TODO: improve the tests accuracy
     assertTrue(out.canRead());
   }
 

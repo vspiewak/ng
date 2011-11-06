@@ -128,7 +128,7 @@ public class Core {
   }
 
   public void headers(File sourceFile, File resultFile) {
-    String xsltFile = getClass().getResource("/xsl/odt_flat_images.xsl").toString();
+    String xsltFile = getClass().getResource("/xsl/odt_flat_headers.xsl").toString();
 
     XSLTUtils.transform(
             sourceFile.getAbsolutePath(),
@@ -136,7 +136,7 @@ public class Core {
   }
 
   public void blocks(File sourceFile, File resultFile) {
-    String xsltFile = getClass().getResource("/xsl/odt_flat_images.xsl").toString();
+    String xsltFile = getClass().getResource("/xsl/odt_flat_blocks.xsl").toString();
 
     XSLTUtils.transform(
             sourceFile.getAbsolutePath(),
