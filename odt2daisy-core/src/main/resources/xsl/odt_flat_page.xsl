@@ -247,6 +247,7 @@
 <!--                                                           -->
 <xsl:template name="printPageNumberTag">
 
+   <!--
    <xsl:message select="concat('DEBUG: current position: ', position())" />
    <xsl:message select="concat('DEBUG: last position: ', last())" />
 
@@ -254,11 +255,12 @@
 
    <xsl:message select="concat('name: ', ../local-name())" />
    <xsl:message select="concat('name: ', 1 + count(//office:text/*))" />
-
+ 
    <xsl:if test="../local-name() = 'text'">
       <xsl:message select="concat('DEBUG: progress: ', format-number($progress, '#.00'), '%')" />
    </xsl:if>
- 
+   -->
+
    <saxon:assign name="pagevalue">
       <xsl:number value="$pagenum" format="{$enumType}" />
    </saxon:assign>

@@ -6,7 +6,7 @@ package net.sf.odt2daisy.core;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
 	//TODO: implement command line interface...
         System.out.println( "Hello World!" );

@@ -53,16 +53,21 @@
 
 <xsl:output method="xml" indent="yes" encoding="UTF-8" />
 
+<xsl:param name="baseURI" select="'/tmp/'"/>
+
 <xsl:template match="/">
 
    <xsl:message select="'import meta.xml'" />
-   <xsl:variable name="meta" select="document('meta.xml')//office:document-meta/*" />
+   <xsl:variable name="meta" select="document(concat($baseURI,'meta.xml'))//office:document-meta/*" />
+
    <xsl:message select="'import settings.xml'" />
-   <xsl:variable name="settings" select="document('settings.xml')//office:document-settings/*" />
+   <xsl:variable name="settings" select="document(concat($baseURI,'settings.xml'))//office:document-settings/*" />
+
    <xsl:message select="'import styles.xml'" />
-   <xsl:variable name="styles" select="document('styles.xml')//office:document-styles/*" />
+   <xsl:variable name="styles" select="document(concat($baseURI,'styles.xml'))//office:document-styles/*" />
+
    <xsl:message select="'import content.xml'" />
-   <xsl:variable name="content" select="document('content.xml')//office:document-content/*" />
+   <xsl:variable name="content" select="document(concat($baseURI,'content.xml'))//office:document-content/*" />
 
    <office:document>
       <xsl:copy-of select="$meta" />
