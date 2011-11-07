@@ -35,6 +35,7 @@ import net.sf.odt2daisy.core.utils.ZipUtils;
 public class Core {
 
   public final static String OS_TMP_FOLDER = System.getProperty("java.io.tmpdir");
+  
   private File inputFile;
   private File resultFile;
   private File tmpDir;
@@ -48,12 +49,13 @@ public class Core {
     this.inputFile = fileIn;
     this.resultFile = fileOut;
 
-    tmpDir = new File(OS_TMP_FOLDER + this.inputFile.getName());
+    tmpDir = new File(OS_TMP_FOLDER, this.inputFile.getName());
     tmpDir.deleteOnExit();
     System.out.println("DEBUG: tmpDir:" + tmpDir);
   }
 
   public void process() {
+    
     try {
 
       /* unzip the odtFile */
@@ -61,23 +63,23 @@ public class Core {
 
       /* merge into one xml file */
       merge(
-              new File(tmpDir + File.separator + "content.xml"),
-              new File(tmpDir + File.separator + "1"));
+              new File(tmpDir, "content.xml"),
+              new File(tmpDir, "1"));
 
       pages(
-              new File(tmpDir + File.separator + "1"),
-              new File(tmpDir + File.separator + "2"));
+              new File(tmpDir, "1"),
+              new File(tmpDir, "2"));
 
       images(
-              new File(tmpDir + File.separator + "2"),
-              new File(tmpDir + File.separator + "3"));
+              new File(tmpDir, "2"),
+              new File(tmpDir, "3"));
 
       headers(
-              new File(tmpDir + File.separator + "3"),
-              new File(tmpDir + File.separator + "4"));
+              new File(tmpDir, "3"),
+              new File(tmpDir, "4"));
 
       blocks(
-              new File(tmpDir + File.separator + "4"),
+              new File(tmpDir, "4"),
               //new File(tmpDir + File.separator + "5")
               resultFile
               );
