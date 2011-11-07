@@ -55,7 +55,7 @@
 
      <menu ref="reports" />
 
-     <menu name="SourceForge.net" inherit="top">
+     <menu name="SourceForge.net" inherit="bottom">
        <item name="Project page"
              href="http://sourceforge.net/projects/odt2daisy" />
        <item name="Download"
